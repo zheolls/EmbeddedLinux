@@ -1,0 +1,191 @@
+﻿{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "-v",
+      "ctestCommandArgs": "",
+      "variables": []
+    },
+    {
+      "name": "Linux-Release",
+      "generator": "Unix Makefiles",
+      "configurationType": "RelWithDebInfo",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_arm" ],
+      "remoteMachineName": "${defaultRemoteMachineName}",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteBuildRoot": "$HOME/${projectDirName}/out/build/${name}",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remoteCopySources": true,
+      "rsyncCommandArgs": "-t --delete --delete-excluded",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySourcesMethod": "rsync",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": [
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ar",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "/usr/bin/g++-7",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_STRIP",
+          "value": "/usr/bin/arm-linux-gnueabihf-strip",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_LINKER",
+          "value": "/usr/bin/arm-linux-gnueabihf-ld",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_OBJDUMP",
+          "value": "/usr/bin/arm-linux-gnueabihf-objdump",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_OBJCOPY",
+          "value": "/usr/bin/arm-linux-gnueabihf-objcopy",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_NM",
+          "value": "/usr/bin/arm-linux-gnueabihf-nm",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-ar",
+          "type": "FILEPATH"
+        }
+      ]
+    },
+    {
+      "name": "Linux-Debug",
+      "generator": "Unix Makefiles",
+      "configurationType": "Debug",
+      "cmakeExecutable": "/usr/bin/cmake",
+      "remoteCopySourcesExclusionList": [ ".vs", ".git", "out" ],
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "linux_arm" ],
+      "remoteMachineName": "${defaultRemoteMachineName}",
+      "remoteCMakeListsRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/src",
+      "remoteBuildRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/build/${name}",
+      "remoteInstallRoot": "$HOME/.vs/${projectDirName}/${workspaceHash}/out/install/${name}",
+      "remoteCopySources": true,
+      "rsyncCommandArgs": "-t --delete --delete-excluded",
+      "remoteCopyBuildOutput": false,
+      "remoteCopySourcesMethod": "rsync",
+      "addressSanitizerRuntimeFlags": "detect_leaks=0",
+      "variables": [
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ar",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_C_COMPILER_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER",
+          "value": "/usr/bin/g++-7",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_CXX_COMPILER_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-gcc-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_STRIP",
+          "value": "/usr/bin/arm-linux-gnueabihf-strip",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_LINKER",
+          "value": "/usr/bin/arm-linux-gnueabihf-ld",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_RANLIB",
+          "value": "/usr/bin/arm-linux-gnueabihf-ranlib",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_OBJDUMP",
+          "value": "/usr/bin/arm-linux-gnueabihf-objdump",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_OBJCOPY",
+          "value": "/usr/bin/arm-linux-gnueabihf-objcopy",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_NM",
+          "value": "/usr/bin/arm-linux-gnueabihf-nm",
+          "type": "FILEPATH"
+        },
+        {
+          "name": "CMAKE_AR",
+          "value": "/usr/bin/arm-linux-gnueabihf-ar",
+          "type": "FILEPATH"
+        }
+      ],
+      "intelliSenseMode": "linux-gcc-arm"
+    }
+  ]
+}
