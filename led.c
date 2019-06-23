@@ -11,16 +11,13 @@
 #include <linux/poll.h>    /* COPY_TO_USER */
 #include <asm-arm/system.h>     /* cli(), *_flags */
 #include <linux/cdev.h>
-
 #include <asm-arm/arch/regs-gpio.h>
 #include <asm-arm/hardware.h>
 #include <asm-arm/io.h>	/*writel,readl*/
-
 #define DEVICE_NAME	"UP-LED"
 #define LEDRAW_MINOR	0
 #define GPCCON (*(volatile unsigned int *)S3C2410_GPCCON)
 #define GPCDAT (*(volatile unsigned int *)S3C2410_GPCDAT)
-
 struct cdev *mycdev;
 dev_t devno;
 

@@ -7,6 +7,7 @@ project ("LED")
 
 # 包含子项目。
 add_subdirectory ("test_led")
+add_subdirectory("tcp")
 
 #Linux支持头文件
 include_directories("/usr/src/linux-2.6.24.4/include")
@@ -34,6 +35,8 @@ function(compile_module obj)
 		     COMMAND echo "obj-m := ${obj}.o" > ${CMAKE_CURRENT_BINARY_DIR}/Makefile
 		     COMMAND echo "${obj}-objs:=${depend_objlist}" >>${CMAKE_CURRENT_BINARY_DIR}/Makefile
 		     COMMAND make -C ${KERNEL_DIR} M=${CMAKE_CURRENT_BINARY_DIR} modules
+			 COMMAND rm -rf *.o *~ core .depend .*.cmd *.mod.c .tmp_versions
+
 		     )
 endfunction()
 
