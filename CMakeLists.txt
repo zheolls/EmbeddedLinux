@@ -1,4 +1,4 @@
-﻿# CMakeList.txt: 顶层 CMake 项目文件，在此处执行全局配置
+# CMakeList.txt: 顶层 CMake 项目文件，在此处执行全局配置
 # 并包含子项目。
 #
 cmake_minimum_required (VERSION 3.8)
@@ -34,6 +34,7 @@ function(compile_module obj)
 		     POST_BUILD
 		     COMMAND echo "obj-m := ${obj}.o" > ${CMAKE_CURRENT_BINARY_DIR}/Makefile
 		     COMMAND echo "${obj}-objs:=${depend_objlist}" >>${CMAKE_CURRENT_BINARY_DIR}/Makefile
+			 COMMAND echo ".PHONY:	modules"  >>${CMAKE_CURRENT_BINARY_DIR}/Makefile
 		     COMMAND make -C ${KERNEL_DIR} M=${CMAKE_CURRENT_BINARY_DIR} modules
 			 COMMAND rm -rf *.o *~ core .depend .*.cmd *.mod.c .tmp_versions
 

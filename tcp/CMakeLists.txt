@@ -1,10 +1,10 @@
-# CMakeList.txt: CMakeProject1 µÄ CMake ÏîÄ¿£¬ÔÚ´Ë´¦°üÀ¨Ô´´úÂë²¢¶¨Òå
-# ÏîÄ¿ÌØ¶¨µÄÂß¼­¡£
+# CMakeList.txt: CMakeProject1 çš„ CMake é¡¹ç›®ï¼Œåœ¨æ­¤å¤„åŒ…æ‹¬æºä»£ç å¹¶å®šä¹‰
+# é¡¹ç›®ç‰¹å®šçš„é€»è¾‘ã€‚
 #
 cmake_minimum_required (VERSION 3.8)
 
-# ½«Ô´´úÂëÌí¼Óµ½´ËÏîÄ¿µÄ¿ÉÖ´ĞĞÎÄ¼ş¡£
+# å°†æºä»£ç æ·»åŠ åˆ°æ­¤é¡¹ç›®çš„å¯æ‰§è¡Œæ–‡ä»¶ã€‚
 add_executable (tcp  "server.c")
 
-# TODO: ÈçÓĞĞèÒª£¬ÇëÌí¼Ó²âÊÔ²¢°²×°Ä¿±ê¡£
+# TODO: å¦‚æœ‰éœ€è¦ï¼Œè¯·æ·»åŠ æµ‹è¯•å¹¶å®‰è£…ç›®æ ‡ã€‚
 include_directories("/usr/arm-linux-gnueabi/include")

@@ -29,7 +29,9 @@ static int dcm_fd = -1;
 char* DCM_DEV = "/dev/s3c2410-dc-motor0";
 int setpwm = 0;
 //1000 open dcm 
-//
+//1001 set pwm
+//1002 check pwm
+//1003 close dcm
 
 char* substring(char* ch, int pos, int length)
 {
