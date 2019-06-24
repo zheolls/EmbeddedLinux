@@ -40,4 +40,4 @@ function(compile_module obj)
 		     )
 endfunction()
 
-compile_module(led)
+compile_module(s3c2410-dc-motor)
