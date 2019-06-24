@@ -7,8 +7,8 @@ project ("LED")
 
 # 包含子项目。
 # add_subdirectory ("test_led")
-add_subdirectory("tcp")
-
+add_subdirectory("server")
+add_subdirectory("client")
 #Linux支持头文件
 include_directories("/usr/src/linux-2.6.24.4/include")
 include_directories("/usr/src/linux-2.6.24.4/arch")
