@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("LED")
 
 # 包含子项目。
-add_subdirectory ("test_led")
+# add_subdirectory ("test_led")
 add_subdirectory("tcp")
 
 #Linux支持头文件
