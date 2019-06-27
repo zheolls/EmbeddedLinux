@@ -8,192 +8,27 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>376</width>
-            <height>381</height>
+            <width>380</width>
+            <height>500</height>
         </rect>
     </property>
     <property name="caption">
-        <string>TCP net system to arm</string>
+        <string>TCP网络电机控制系统</string>
     </property>
-    <widget class="QSlider">
-        <property name="name">
-            <cstring>slider2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>280</y>
-                <width>320</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="minValue">
-            <number>-512</number>
-        </property>
-        <property name="maxValue">
-            <number>512</number>
-        </property>
-        <property name="orientation">
-            <enum>Horizontal</enum>
-        </property>
-    </widget>
-    <widget class="QSpinBox">
-        <property name="name">
-            <cstring>spinBox1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>160</x>
-                <y>240</y>
-                <width>52</width>
-                <height>25</height>
-            </rect>
-        </property>
-        <property name="maxValue">
-            <number>512</number>
-        </property>
-        <property name="minValue">
-            <number>-512</number>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>pushButton1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>250</x>
-                <y>320</y>
-                <width>96</width>
-                <height>30</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>exit</string>
-        </property>
-        <property name="autoDefault">
-            <bool>false</bool>
-        </property>
-    </widget>
     <widget class="QLabel">
         <property name="name">
-            <cstring>textLabel5</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>180</y>
-                <width>140</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>set DC motor state:</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel1</cstring>
+            <cstring>textLabel1_2</cstring>
         </property>
         <property name="geometry">
             <rect>
                 <x>30</x>
                 <y>20</y>
-                <width>110</width>
+                <width>80</width>
                 <height>20</height>
             </rect>
         </property>
         <property name="text">
-            <string>DC motor state:</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel3</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>70</y>
-                <width>100</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>motor speed:</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel4</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>130</x>
-                <y>70</y>
-                <width>90</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel6</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>240</y>
-                <width>120</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>set motor speed:</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>160</x>
-                <y>20</y>
-                <width>180</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-    </widget>
-    <widget class="QSlider">
-        <property name="name">
-            <cstring>slider1</cstring>
-        </property>
-        <property name="enabled">
-            <bool>false</bool>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>110</y>
-                <width>320</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="minValue">
-            <number>-512</number>
-        </property>
-        <property name="maxValue">
-            <number>512</number>
-        </property>
-        <property name="orientation">
-            <enum>Horizontal</enum>
+            <string>目标机IP：</string>
         </property>
     </widget>
     <widget class="QButtonGroup">
@@ -203,7 +38,7 @@
         <property name="geometry">
             <rect>
                 <x>180</x>
-                <y>170</y>
+                <y>270</y>
                 <width>170</width>
                 <height>40</height>
             </rect>
@@ -211,22 +46,6 @@
         <property name="title">
             <string></string>
         </property>
-        <widget class="QRadioButton">
-            <property name="name">
-                <cstring>radioButton2</cstring>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>100</x>
-                    <y>10</y>
-                    <width>60</width>
-                    <height>21</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>close</string>
-            </property>
-        </widget>
         <widget class="QRadioButton">
             <property name="name">
                 <cstring>radioButton1</cstring>
@@ -240,9 +59,270 @@
                 </rect>
             </property>
             <property name="text">
-                <string>open</string>
+                <string>开启</string>
             </property>
         </widget>
+        <widget class="QRadioButton">
+            <property name="name">
+                <cstring>radioButton2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>100</x>
+                    <y>10</y>
+                    <width>60</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>关闭</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>170</y>
+                <width>100</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>电机转速：</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>340</y>
+                <width>120</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>设置电机转速：</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>120</y>
+                <width>110</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>直流电机状态：</string>
+        </property>
+    </widget>
+    <widget class="QSlider">
+        <property name="name">
+            <cstring>slider1</cstring>
+        </property>
+        <property name="enabled">
+            <bool>false</bool>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>210</y>
+                <width>320</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="minValue">
+            <number>-512</number>
+        </property>
+        <property name="maxValue">
+            <number>512</number>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel5</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>280</y>
+                <width>140</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>设置电机状态：</string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>250</x>
+                <y>420</y>
+                <width>96</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>退出</string>
+        </property>
+        <property name="autoDefault">
+            <bool>false</bool>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>60</y>
+                <width>96</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>断开连接</string>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel4</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>170</y>
+                <width>90</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QSpinBox">
+        <property name="name">
+            <cstring>spinBox1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>160</x>
+                <y>340</y>
+                <width>52</width>
+                <height>25</height>
+            </rect>
+        </property>
+        <property name="maxValue">
+            <number>512</number>
+        </property>
+        <property name="minValue">
+            <number>-512</number>
+        </property>
+    </widget>
+    <widget class="QSlider">
+        <property name="name">
+            <cstring>slider2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>380</y>
+                <width>320</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="minValue">
+            <number>-512</number>
+        </property>
+        <property name="maxValue">
+            <number>512</number>
+        </property>
+        <property name="pageStep">
+            <number>0</number>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>150</x>
+                <y>120</y>
+                <width>140</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>pushButton2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>40</x>
+                <y>60</y>
+                <width>96</width>
+                <height>30</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>连接</string>
+        </property>
+    </widget>
+    <widget class="QLineEdit">
+        <property name="name">
+            <cstring>lineEdit1</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>130</x>
+                <y>20</y>
+                <width>180</width>
+                <height>22</height>
+            </rect>
+        </property>
+    </widget>
+    <widget class="QLabel">
+        <property name="name">
+            <cstring>textLabel2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>30</x>
+                <y>460</y>
+                <width>320</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="text">
+            <string>160400508朱赛辉 160400509张锐</string>
+        </property>
     </widget>
 </widget>
 <connections>
@@ -259,12 +339,6 @@
         <slot>setValue(int)</slot>
     </connection>
     <connection>
-        <sender>slider2</sender>
-        <signal>valueChanged(int)</signal>
-        <receiver>spinBox1</receiver>
-        <slot>setValue(int)</slot>
-    </connection>
-    <connection>
         <sender>pushButton1</sender>
         <signal>clicked()</signal>
         <receiver>Form</receiver>
@@ -272,7 +346,7 @@
     </connection>
     <connection>
         <sender>slider2</sender>
-        <signal>valueChanged(int)</signal>
+        <signal>sliderReleased()</signal>
         <receiver>Form</receiver>
         <slot>sendToServer()</slot>
     </connection>
@@ -286,13 +360,43 @@
         <sender>radioButton1</sender>
         <signal>clicked()</signal>
         <receiver>Form</receiver>
-        <slot>sendToServer()</slot>
+        <slot>openMotor()</slot>
     </connection>
     <connection>
         <sender>radioButton2</sender>
         <signal>clicked()</signal>
         <receiver>Form</receiver>
+        <slot>closeMotor()</slot>
+    </connection>
+    <connection>
+        <sender>Form</sender>
+        <signal>sendCheck()</signal>
+        <receiver>Form</receiver>
         <slot>sendToServer()</slot>
+    </connection>
+    <connection>
+        <sender>lineEdit1</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>Form</receiver>
+        <slot>setHost()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton2</sender>
+        <signal>clicked()</signal>
+        <receiver>Form</receiver>
+        <slot>setRun()</slot>
+    </connection>
+    <connection>
+        <sender>pushButton3</sender>
+        <signal>clicked()</signal>
+        <receiver>Form</receiver>
+        <slot>setWaitAndDisconnect()</slot>
+    </connection>
+    <connection>
+        <sender>Form</sender>
+        <signal>endConnection()</signal>
+        <receiver>Form</receiver>
+        <slot>closeConnection()</slot>
     </connection>
     <connection>
         <sender>spinBox1</sender>
@@ -300,17 +404,30 @@
         <receiver>Form</receiver>
         <slot>sendToServer()</slot>
     </connection>
+    <connection>
+        <sender>slider2</sender>
+        <signal>sliderReleased()</signal>
+        <receiver>Form</receiver>
+        <slot>setspinBox1()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="global" impldecl="in declaration">qsocket.h</include>
     <include location="global" impldecl="in declaration">qtextstream.h</include>
     <include location="local" impldecl="in declaration">searchthread.h</include>
+    <include location="global" impldecl="in declaration">qcstring.h</include>
     <include location="local" impldecl="in implementation">control.ui.h</include>
 </includes>
 <variables>
-    <variable access="private">QSocket *socket;</variable>
     <variable access="private">SeaThread *sthread;</variable>
+    <variable access="private">QSocket *socket;</variable>
+    <variable access="private">bool isCheck;</variable>
+    <variable access="private">QString host;</variable>
 </variables>
+<signals>
+    <signal>sendCheck()</signal>
+    <signal>endConnection()</signal>
+</signals>
 <slots>
     <slot>closeConnection()</slot>
     <slot>sendToServer()</slot>
@@ -321,6 +438,12 @@
     <slot>socketError( int e )</slot>
     <slot>closeDialog()</slot>
     <slot>connectToServer()</slot>
+    <slot>setHost()</slot>
+    <slot>setRun()</slot>
+    <slot>setWaitAndDisconnect()</slot>
+    <slot>setspinBox1()</slot>
+    <slot>openMotor()</slot>
+    <slot>closeMotor()</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

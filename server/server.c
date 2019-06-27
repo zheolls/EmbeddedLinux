@@ -10,7 +10,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <sys/ioctl.h>
+#include <sys/ioctl.h> 
 #include <sys/wait.h>
 #define PORT 9415
 #define BACKLOG 10
@@ -20,7 +20,7 @@
 int factor = DCM_TCNTB0 / 1024;
 static int dcm_fd = -1;
 char* DCM_DEV = "/dev/s3c2410-dc-motor0";
-int setpwm = 0;
+static int setpwm=1003;
 //1000 open dcm 
 //1001 set pwm
 //1002 check pwm
@@ -77,6 +77,8 @@ int  init_dcm() {
 	}
 	else
 	{
+		setpwm=0;
+		ioctl(dcm_fd, DCM_IOCTRL_SETPWM, 0);
 		return 0;
 	}
 }
@@ -87,6 +89,7 @@ int socket_listner() {
 	int nsockfd;               		// New Socket file descriptor
 	int num;
 	int sin_size;                      	// to store struct size
+	char pipbuffer[10];
 	char sdbuf[LENGTH];          	// Send buffer
 	char revbuf[LENGTH];       		// Receive buffer
 	struct sockaddr_in addr_local; 
@@ -125,81 +128,69 @@ int socket_listner() {
 	} else {
 		printf ("OK: Listening the Port %d sucessfully.\n", PORT);
 	}
-
 	while (1)
 	{
+		pid_t pid;
+		int fd[2];
+		int fd2[2];
+		if (pipe(fd)<0 || pipe(fd2)<0){
+			break;
+		}
 		printf("listner to port: %d\n", PORT);
 		sin_size = sizeof(struct sockaddr);
-
-		/*  Wait a connection, and obtain a new socket file despriptor for single connection */
-		if ((nsockfd = accept(sockfd, (struct sockaddr *)&addr_remote, &sin_size)) < 0)
+		while (1)
 		{
-			printf("ERROR: Obtain new Socket Despcritor error.\n");
-			continue;
-		}
-		else {
-			printf("OK: Server has got connect from %s.\n", inet_ntoa(addr_remote.sin_addr));
-		}
-
-
-		/* Child process */
-		if (!fork())
-		{
-
-			while (strcmp(revbuf, "exit") != 0)
+			nsockfd = accept(sockfd, (struct sockaddr *)&addr_remote, &sin_size);
+			memset(revbuf,'\0',LENGTH);
+			if ((num = recv(nsockfd, revbuf, LENGTH,0)) > 0)
 			{
-				//????????
-				memset(revbuf, 0, LENGTH);
-
-				if ((num = recvfrom(nsockfd, revbuf, LENGTH, 0,(struct sockaddr *)&addr_remote, (socklen_t *) &sin_size)) > 0)
-				{
-					revbuf[num] = '\0';
-					if (!strncmp(revbuf,"1000",4)) {
-						int result = init_dcm();
-						if (result == 0) {
-							strcpy(sdbuf, "1000");
-						}
-						else
-						{
-							strcpy(sdbuf, "2000");
-						}
+				revbuf[num] = '\0';
+				if (!strncmp(revbuf,"1000",4)) {
+					int result = init_dcm();
+					if (result == 0) {
+						strcpy(sdbuf, "1000");
 					}
-					else if (!strncmp(revbuf, "1001", 4)) {
-						setpwm = atoi(substring(revbuf,4,4));
-
-						int result= ioctl(dcm_fd, DCM_IOCTRL_SETPWM, (setpwm * factor));
-						if (result == 0) {
-							strcpy(sdbuf, "1001");
-						}
-						else
-						{
-							strcpy(sdbuf, "2000");
-						}
-					}
-					else if (!strncmp(revbuf, "1002", 4))
+					else
 					{
-						itoa(setpwm, sdbuf, 10);
-	
+						strcpy(sdbuf, "2000");
 					}
-					else if (!strncmp(revbuf, "1003", 4))
-					{
-						int result = ioctl(dcm_fd, DCM_IOCTRL_SETPWM, 0);
-						if (result == 0) {
-							strcpy(sdbuf, "1003");
-						}
-						else
-						{
-							strcpy(sdbuf, "2000");
-						}
-					}
-					sendto(sockfd, sdbuf, LENGTH, 0, (struct sockaddr *)&addr_remote, (socklen_t)sin_size);
 				}
+				else if (!strncmp(revbuf, "1001", 4)) {
+					setpwm = atoi(substring(revbuf,4,4));
+					printf("Set pwm: %d\n",setpwm);
+					int result= ioctl(dcm_fd, DCM_IOCTRL_SETPWM, (setpwm * factor));
+					if (result != 0) {
+						strcpy(sdbuf, "1001");
+					}
+					else
+					{
+						strcpy(sdbuf, "2000");
+					}
+				}
+				else if (!strncmp(revbuf, "1002", 4))
+				{
+					itoa(setpwm, sdbuf, 10);
 
-
+				}
+				else if (!strncmp(revbuf, "1003", 4))
+				{
+					int result=close(dcm_fd);
+					// int result = ioctl(dcm_fd, DCM_IOCTRL_SETPWM, 0);
+					if (result == 0) {
+						strcpy(sdbuf, "1003");
+						setpwm=1003;
+					}
+					else
+					{
+						strcpy(sdbuf, "2000");
+					}
+				}
+				sdbuf[5]='\0';
+				printf("Return %s\n",sdbuf);
+				send(nsockfd, sdbuf, LENGTH, 0);
 			}
+			close(nsockfd);
 		}
-		close(nsockfd);
-		while (waitpid(-1, NULL, WNOHANG) > 0);
 
 	}
 }

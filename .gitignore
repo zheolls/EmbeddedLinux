@@ -51,5 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 /.vs
-/out/build
+/out
+/build
+/.vscode
 client/ctrl2.ui
+.code-workspace.code-workspace
+CMakeSettings.json

@@ -6,6 +6,8 @@
 class SeaThread : public QObject, public QThread{
     Q_OBJECT
 public:
+    QMutex pause;
+public:
     SeaThread();
     ~SeaThread();
     virtual void run();
