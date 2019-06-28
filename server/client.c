@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     	/* Fill the socket address struct */
     	remote_addr.sin_family = AF_INET;              	// Protocol Family
     	remote_addr.sin_port = htons(PORT);           		// Port number
-        remote_addr.sin_addr.s_addr=inet_addr("127.0.0.1");
+        remote_addr.sin_addr.s_addr=inet_addr(argv[1]);
     	//inet_pton(AF_INET, argv[1], &remote_addr.sin_addr); 	// Net Address
     	//memset (remote_addr.sin_zero,0,8);                 	// Flush the rest of struct
 

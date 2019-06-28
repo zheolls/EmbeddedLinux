@@ -7,7 +7,7 @@ project ("LED")
 
 # 包含子项目。
 # add_subdirectory ("test_led")
-add_subdirectory("server")
+# add_subdirectory("server")
 #add_subdirectory("client")
 #Linux支持头文件
 include_directories("/usr/src/linux-2.6.24.4/include")
@@ -42,3 +42,4 @@ function(compile_module obj)
 endfunction()
 
 #compile_module(s3c2410-dc-motor)
+compile_module(led)
